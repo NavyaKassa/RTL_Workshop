@@ -28,4 +28,6 @@ Unlike the actual design code, a testbench:
 - This .vcd file can be viewed using GTKWave to analyze waveform behavior.
 - Using this simulation flow, you can check and debug your design’s functionality before actual hardware implementation.
 
+  ![Alt](Images/iverilog.png)
+
 
