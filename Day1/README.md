@@ -16,4 +16,16 @@ Unlike the actual design code, a testbench:
 - Is not synthesized (i.e., it will never become hardware)
 
 - Is only used for simulation and verification
+  
+![Alt](Images/testbench_design.png)
+
+## 2. iVerilog:
+
+- iVerilog is a free, open-source tool used to simulate Verilog code.
+- You provide both your design code and testbench to Iverilog as inputs.
+- iVerilog compiles these files and performs the simulation.
+- The simulator outputs a .vcd(Value Change Dump) file that records signal value changes during simulation.
+- This .vcd file can be viewed using GTKWave to analyze waveform behavior.
+- Using this simulation flow, you can check and debug your design’s functionality before actual hardware implementation.
+
 
