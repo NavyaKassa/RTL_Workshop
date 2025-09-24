@@ -187,6 +187,7 @@ Load the RTL design into Yosys using:
 ``` read_verilog <design_file.v> 
 ```
 - This tells Yosys which design you want to synthesize.
+![ALT](Images/yosys_lab1.png)
 
 ### 4️⃣ Synthesize the Design
 Run the synthesis command to convert your RTL into a gate-level representation:
@@ -196,12 +197,15 @@ synth -top <module_name>
 - Here, <module_name> is the top module of our design (e.g., good_mux).
 - Yosys will perform optimization, flatten the hierarchy, and prepare the design for mapping to actual cells.
 
+![ALT](Images/yosys_lab2.png)
+
 ### 5️⃣ Technology Mapping and Netlist Generation
 Map the synthesized design to the standard cells in the library using:
 ```
 abc -liberty <path_to_sky130_fd_sc_hd__tt_025C_1v80.lib>
 ```
 - This step converts the generic logic into a gate-level netlist that matches the target technology.
+![ALT](Images/yosys_lab3.png)
 
 ### 6️⃣ Visualize the Gate-Level Netlist
 You can view the synthesized netlist with:
@@ -209,6 +213,8 @@ You can view the synthesized netlist with:
 show
 ```
 - This opens a graphical representation of the netlist, showing gates and their connections. It helps to verify the structure of your synthesized design.
+
+![ALT](Images/yosys_lab4.png)
 
 ### 7️⃣ Write the Netlist to a File
 Finally, save the gate-level netlist to a file for later use or further processing:
