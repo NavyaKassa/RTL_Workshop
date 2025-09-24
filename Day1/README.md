@@ -99,9 +99,77 @@ endmodule
 
 ```
 ### Working of 2x1 MUX:
-- Inputs: i0, i1 (data), sel (select line)
-- Output: y (registered output)
-- Logic: If sel is 1, y gets i1; if sel is 0, y gets i0.
+- Inputs: `i0`, `i1` (data), `sel` (select signal)
+- Output: `y` (registered output)
+- Operation:
+  - If `sel = 0` → `y` takes `i0`
+  - If `sel = 1` → `y` takes `i1`
+- Note: Since `y` is registered, the chosen value is stored in a flip-flop before appearing at the output.
+---
+
+## Introduction to Yosys and Logic Synthesis:
+### Yosys:
+- **Yosys** is an open-source framework for **RTL synthesis**.
+- Yosys is the synthesizer used in this workshop. 
+- It takes hardware designs written in **Verilog/SystemVerilog** and converts them into a lower-level netlist representation.  
+- Widely used in **open-source ASIC and FPGA flows**.
+
+  ### Key Features
+- Supports **Verilog-2005** and parts of **SystemVerilog**.  
+- Performs synthesis steps: parsing, elaboration, optimization, technology mapping.  
+- Can generate netlists for tools like **nextpnr** (FPGA place & route).  
+- Extensible with user-defined passes and plugins.  
+- Outputs in various formats (EDIF, BLIF, JSON, Verilog).
+
+![ALT](Images/yosys_setup.png)
+![ALT](Images/synthesis_verification.png)
+
+- For every input stimulus, the output should match the RTL simulation result.
+
+### Logic Synthesis:
+- **Synthesis**:
+    - Process of converting RTL (Register Transfer Level) design into a gate-level representation.
+    - The RTL description is translated into **logic gates** and **connections** between them.
+    - The output of synthesis is a file called a **netlist**, which describes the gate-level circuit.  
+- **Netlist**:  
+  - Gate-level representation of the design.  
+  - Describes the circuit using **standard cells** defined in the `.lib` file.  
+- **.lib (Library File)**:  
+  - Collection of standard cells (basic logic gates like AND, OR, NOT, etc.).  
+  - Each cell is available in different variants (slow, medium, fast).  
+- **Cell Variants**:  
+  - **Fast cells** → used to meet performance (timing) requirements.  
+  - **Slow cells** → used to fix hold violations.
+ 
+### Why Do Libraries Have Different Gate "Flavors"?
+Different gate flavors exist to optimize **speed, power, area, and drive strength**, letting synthesis tools pick the best one for each part of the design.
+
+### Why We Need Slow Cells
+- **Fix hold violations**: Slow cells help ensure signals do not arrive too early in non-critical paths.
+- **Reduce power and area**: Slower cells are often smaller and consume less energy where speed is not required.
+
+### Faster Cells vs Slower Cells
+
+- **Faster Cells**:  
+  - Used in **timing-critical paths** to meet performance.  
+  - Larger in size and consume more power.  
+- **Slower Cells**:  
+  - Used in **non-critical paths** to fix hold violations.  
+  - Smaller in size and consume less power.  
+**Trade-off:** Faster cells improve speed, slower cells save area and power.
+
+### Selection of Cells:
+We need to guide the synthesizer to select the **optimal cell flavor** for each part of the design:  
+- **Faster Cells** → selected for **timing-critical paths** to meet performance requirements.  
+- **Slower/Smaller Cells** → selected for **non-critical paths** to save area and power, and to fix hold violations.  
+- **Synthesis Tools** automatically choose the appropriate cell **based on timing, power, and area trade-offs**.
+
+
+
+
+
+
+  
 
 
 
