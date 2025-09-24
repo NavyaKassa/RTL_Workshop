@@ -110,15 +110,15 @@ endmodule
 ## Introduction to Yosys and Logic Synthesis:
 ### Yosys:
 - **Yosys** is an open-source framework for **RTL synthesis**.
-- Yosys is the synthesizer used in this workshop. 
-- It takes hardware designs written in **Verilog/SystemVerilog** and converts them into a lower-level netlist representation.  
+- Yosys is the synthesizer used in this workshop.
+- It takes hardware designs written in **Verilog/SystemVerilog** and converts them into a lower-level netlist representation.
 - Widely used in **open-source ASIC and FPGA flows**.
 
   ### Key Features
-- Supports **Verilog-2005** and parts of **SystemVerilog**.  
-- Performs synthesis steps: parsing, elaboration, optimization, technology mapping.  
-- Can generate netlists for tools like **nextpnr** (FPGA place & route).  
-- Extensible with user-defined passes and plugins.  
+- Supports **Verilog-2005** and parts of **SystemVerilog**.
+- Performs synthesis steps: parsing, elaboration, optimization, technology mapping.
+- Can generate netlists for tools like **nextpnr** (FPGA place & route).
+- Extensible with user-defined passes and plugins.
 - Outputs in various formats (EDIF, BLIF, JSON, Verilog).
 
 ![ALT](Images/yosys_setup.png)
@@ -164,6 +164,60 @@ We need to guide the synthesizer to select the **optimal cell flavor** for each 
 - **Slower/Smaller Cells** → selected for **non-critical paths** to save area and power, and to fix hold violations.  
 - **Synthesis Tools** automatically choose the appropriate cell **based on timing, power, and area trade-offs**.
 
+## Lab using Yosys:
+In this lab, we will perform a hands-on exercise using Yosys to synthesize a Verilog design.
+The example design we will use is good_mux.
+
+## Step-by-Step Guide
+
+### 1️⃣ Start Yosys
+Open a terminal and launch Yosys:
+```
+yosys
+```
+- This will start the Yosys environment where we can run synthesis commands.
+### 2️⃣ Load the Standard Cell Library
+Before synthesis, Yosys needs the technology information of the target library. Use the following command to read the Sky130 library:
+```
+read_liberty -lib <path_to_sky130_fd_sc_hd__tt_025C_1v80.lib>
+```
+- This library contains information about standard cells (AND, OR, NOT, etc.) and their characteristics (timing, area, and power).
+### 3️⃣ Read the Verilog Design File
+Load the RTL design into Yosys using:
+``` read_verilog <design_file.v> 
+```
+- This tells Yosys which design you want to synthesize.
+
+### 4️⃣ Synthesize the Design
+Run the synthesis command to convert your RTL into a gate-level representation:
+```
+synth -top <module_name>
+```
+- Here, <module_name> is the top module of our design (e.g., good_mux).
+- Yosys will perform optimization, flatten the hierarchy, and prepare the design for mapping to actual cells.
+
+### 5️⃣ Technology Mapping and Netlist Generation
+Map the synthesized design to the standard cells in the library using:
+```
+abc -liberty <path_to_sky130_fd_sc_hd__tt_025C_1v80.lib>
+```
+- This step converts the generic logic into a gate-level netlist that matches the target technology.
+
+### 6️⃣ Visualize the Gate-Level Netlist
+You can view the synthesized netlist with:
+```
+show
+```
+- This opens a graphical representation of the netlist, showing gates and their connections. It helps to verify the structure of your synthesized design.
+
+### 7️⃣ Write the Netlist to a File
+Finally, save the gate-level netlist to a file for later use or further processing:
+```
+write_verilog <netlist_file.v>           # Saves the full netlist with all attributes
+write_verilog -noattr <simple_netlist.v> # Saves a simpler version without extra attributes
+```
+
+Following these steps, we will convert your RTL design into a gate-level netlist, mapped to Sky130 standard cells, visualize the netlist, and save it for future use.
 
 
 
