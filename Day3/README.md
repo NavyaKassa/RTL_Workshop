@@ -26,6 +26,8 @@ Constant propagation is a combinational logic optimization technique where signa
 - Shortens the critical path, improving timing.
 - Makes the design easier to debug and analyze.
 
+![ALT](Images/constant_propagation.png)
+
 ### 🔹 Boolean Logic Optimization
 
 **Definition:**  
@@ -37,6 +39,7 @@ Boolean logic optimization is the process of **simplifying logic expressions** u
 - Lowers **power consumption** by reducing gate count.  
 - Simplifies **routing** in the physical design.
 
+![ALT](Images/booloean_logic.png)
 
 ### 🔹 Sequential Logic Optimization
 **Definition:**
@@ -96,4 +99,160 @@ Retiming is a **sequential optimization technique** where flip-flops (registers)
 2. Move registers **forward or backward** across logic gates to balance delays.  
 3. Ensure **data dependencies** are preserved.
 
-## 
+## Labs on Combination & Sequential Logic Optimizations:
+## Steps to synthesis the design:
+1.  Start Yosys
+```
+yosys
+```
+2️. Load the Standard Cell Library
+```
+read_liberty -lib <path_to_sky130_fd_sc_hd__tt_025C_1v80.lib>
+```
+3. Read the Verilog Design File
+```
+read_verilog <design_file.v> 
+```
+4. Synthesize the Design
+```
+synth -top <module_name>
+```
+5. opt
+```
+opt_clean -purge
+```
+6. Technology Mapping and Netlist Generation
+```
+abc -liberty <path_to_sky130_fd_sc_hd__tt_025C_1v80.lib>
+```
+7. Visualize the Gate-Level Netlist
+```
+show
+```
+---
+## 1. Lab1- 2 input AND gate
+```verilog
+🔹 Module: opt_check
+module opt_check (input a , input b , output y);
+	assign y = a?b:0;
+endmodule
+```
+**Functionality:**  
+- Behavior: `y = a ? b : 0`  
+  - If `a = 1`, `y` takes the value of `b`  
+  - If `a = 0`, `y = 0`  
+- Equivalent Logic: `y = a & b`  
+
+![ALT](Images/opt_check.png)
+
+## 2. Lab2 - 2 input OR gate
+```verilog
+🔹 Module: opt_check2
+module opt_check2 (input a , input b , output y);
+	assign y = a?1:b;
+endmodule
+```
+
+**Functionality:**  
+- Acts as a multiplexer:
+   - y = 1 if a is true.
+   - y = b if a is false.
+- Equivalent Logic: Can be thought of as `y = a | b`.
+![ALT](Images/opt_check2.png)
+
+## 3. Lab3 - 3 input AND gate
+```verilog
+🔹 Module: opt_check3
+module opt_check2 (input a , input b , output y);
+	assign y = a?1:b;
+endmodule
+```
+**Functionality:**
+- This is equivalent to a 2-to-1 multiplexer:
+   - If a = 1 → select input 1 → output y = 1
+   - If a = 0 → select input 0 → output y = b
+
+## 4. Lab4:
+```verilog
+🔹 Module: opt_check4
+module opt_check4 (input a , input b , input c , output y);
+ assign y = a?(b?(a & c ):c):(!c);
+ endmodule
+```
+**Functionality:**  
+- **Inputs:** `a`, `b`, `c` | **Output:** `y`  
+- **Behavior (nested ternary operators):**  
+  - If `a = 1`:  
+    - If `b = 1`: `y = a & c` → since `a = 1`, `y = c`  
+    - If `b = 0`: `y = c`  
+  - If `a = 0`: `y = !c`  
+- **Simplified Expression:**  y = (a ? c : !c);
+
+## 5. Lab5 - D Flip Flop:
+```verilog
+🔹 Module: dff_const1
+module dff_const1(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b0;
+	else
+		q <= 1'b1;
+end
+endmodule
+```
+**Functionality:**  
+- D Flip-flop with **asynchronous reset**: output `q` is cleared to 0 immediately when `reset` is high.  
+- When `reset` is low, the flip-flop **always outputs 1** on every clock edge.  
+- Effectively produces a **constant logic high** after reset.
+
+## 6. Lab6 - d Flip Flop
+```verilog
+🔹 Module: dff_const2
+module dff_const2(input clk, input reset, output reg q);
+always @(posedge clk, posedge reset)
+begin
+	if(reset)
+		q <= 1'b1;
+	else
+		q <= 1'b1;
+end
+endmodule
+```
+**Functionality:**  
+- D Flip-Flop with **asynchronous reset**.  
+- On reset → output `q` is set to `1`.  
+- On every clock edge (when not in reset) → `q` remains `1`.
+
+## 7. Lab7
+```verilog
+🔹 Module: dff_const3
+module dff_const3(input clk, input reset, output reg q);
+reg q1;
+always @(posedge clk, posedge reset)
+begin
+   if(reset)
+   begin
+      q1 <=1'b1;
+      q1 <=1'b0;
+   end
+   else
+   begin
+      q1 <=1'b1;
+      q <=q1;
+   end
+end
+endmodule
+```
+**Functionality:**  
+- On reset → `q1` is first set to `1` and then immediately to `0`.  
+  (Final effect: `q1 = 0` because the last assignment wins).  
+- On every clock edge (when not in reset):  
+  - `q1` is forced to `1`.  
+  - `q` takes the value of the previous `q1`.
+ 
+  
+
+
+
+
