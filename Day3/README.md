@@ -172,6 +172,8 @@ endmodule
    - If a = 1 → select input 1 → output y = 1
    - If a = 0 → select input 0 → output y = b
 
+![ALT](Images/opt_check3.png)
+
 ## 4. Lab4:
 ```verilog
 🔹 Module: opt_check4
@@ -187,6 +189,8 @@ module opt_check4 (input a , input b , input c , output y);
     - If `b = 0`: `y = c`  
   - If `a = 0`: `y = !c`  
 - **Simplified Expression:**  y = (a ? c : !c);
+
+![ALT](Images/opt_check4.png)
 
 ## 5. Lab5 - D Flip Flop:
 ```verilog
@@ -206,6 +210,8 @@ endmodule
 - When `reset` is low, the flip-flop **always outputs 1** on every clock edge.  
 - Effectively produces a **constant logic high** after reset.
 
+![ALT](Images/dff_const1.png)
+
 ## 6. Lab6 - d Flip Flop
 ```verilog
 🔹 Module: dff_const2
@@ -219,6 +225,8 @@ begin
 end
 endmodule
 ```
+![ALT](Images/dff_const2.png)
+
 **Functionality:**  
 - D Flip-Flop with **asynchronous reset**.  
 - On reset → output `q` is set to `1`.  
@@ -250,7 +258,19 @@ endmodule
 - On every clock edge (when not in reset):  
   - `q1` is forced to `1`.  
   - `q` takes the value of the previous `q1`.
- 
+
+![ALT](Images/dff_const3.png)
+
+ ## 📝 Summary:
+
+- **Logic Squeezing** → Compress logic to minimize area and power.  
+- **Constant Propagation** → Replace known signals with constants to simplify logic.  
+- **Boolean Logic Optimization** → Use Boolean algebra/K-map to reduce gate count.  
+- **Sequential Constant Propagation** → Remove registers/signals that always hold constant values.  
+- **State Optimization** → Reduce FSM states while preserving behavior for smaller, faster designs.  
+- **Cloning** → Duplicate logic to handle high fan-out and improve timing.  
+- **Retiming** → Move registers across logic to balance paths and meet timing.  
+
   
 
 
