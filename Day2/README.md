@@ -39,7 +39,7 @@ Hierarchical synthesis is a modular approach to converting RTL into gates. Inste
 
 Example:
 Hierarchical synthesis netlist for multiple_modules.v:
-```
+``` verilog
 module sub_module2 (input a, input b, output y);
 	assign y = a | b;
 endmodule
