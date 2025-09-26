@@ -293,7 +293,7 @@ endmodule
 - **State Optimization** → Reduce FSM states while preserving behavior for smaller, faster designs.  
 - **Cloning** → Duplicate logic to handle high fan-out and improve timing.  
 - **Retiming** → Move registers across logic to balance paths and meet timing.  
-
+- Labs: Practical Verilog labs illustrate these concepts, including examples of combinational logic optimizations and D flip-flop behaviors, each with code snippets and output images.
   
 
 
