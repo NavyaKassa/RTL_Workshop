@@ -37,6 +37,25 @@ Hierarchical synthesis is a modular approach to converting RTL into gates. Inste
 - Scalability: Works well for large SoCs where the design has millions of gates.
 - Optimization Trade-off: May not be as tightly optimized as flat synthesis because inter-module optimizations are limited.
 
+Example:
+Hierarchical synthesis netlist for multiple_modules.v:
+```
+module sub_module2 (input a, input b, output y);
+	assign y = a | b;
+endmodule
+
+module sub_module1 (input a, input b, output y);
+	assign y = a&b;
+endmodule
+
+
+module multiple_modules (input a, input b, input c , output y);
+	wire net1;
+	sub_module1 u1(.a(a),.b(b),.y(net1));  //net1 = a&b
+	sub_module2 u2(.a(net1),.b(c),.y(y));  //y = net1|c ,ie y = a&b + c;
+endmodule
+```
+![ALt](Images/heirarchial_synthesis.png)
 
 ### Flattened Synthesis
 Flattened synthesis is a single-block approach where the entire RTL design is merged into one large netlist before synthesis. Unlike hierarchical synthesis, it removes module boundaries to maximize optimization.
@@ -47,6 +66,10 @@ Flattened synthesis is a single-block approach where the entire RTL design is me
 - Harder Debugging: Since modules are no longer separate, tracing issues back to the RTL is more complex.
 - Less Reusability: Flattened modules can’t easily be reused in other projects.
 - Good for Smaller Designs: Works well when the design isn’t too large or when maximum performance/area optimization is needed.
+
+Example:
+Flat synthesis netlist for multiple_modules.v:
+![ALT](Images/flattened_synthesis.png)
 
 ## 🔀 Hierarchical vs. Flattened Synthesis  
 
@@ -72,5 +95,79 @@ Flattened synthesis is a single-block approach where the entire RTL design is me
 - **Synchronization:** Ensures signals change only at clock edges for predictable timing.
 - **Building Blocks:** Used to create registers, counters, shift registers, and state machines.
 - **Pipeline Stages:** Essential in processors and digital systems for sequential execution.
+
+**Below are efficient coding styles for different reset/set behaviors:**
+### 📌 Asynchronous Reset D Flip-Flop:
+- **Definition:** Forces the flip-flop output Q to 0 immediately, regardless of the clock.
+- **Behavior:** The moment reset is active, output becomes 0 — no need to wait for a clock edge.
+
+``` verilog
+**Verilog Module:** dff_asyncres.v
+
+module dff_asyncres (input clk, input async_reset, input d, output reg q);
+  always @ (posedge clk, posedge async_reset)
+    if (async_reset)
+      q <= 1'b0;
+    else
+      q <= d;
+endmodule
+```
+### Waveform for dff_asyncres.v:
+![ALT](Images/async_reset.png)
+
+### 📌 Asynchronous Set D Flip-Flop:
+- **Definition:** Forces the flip-flop output Q to 1 immediately, regardless of the clock.
+- **Behavior:** As soon as set is active, output becomes 1 — independent of the clock.
+
+```verilog
+**Verilog Module:** dff_syncres.v
+
+module dff_async_set (input clk, input async_set, input d, output reg q);
+  always @ (posedge clk, posedge async_set)
+    if (async_set)
+      q <= 1'b1;
+    else
+      q <= d;
+endmodule
+```
+### Waveform for dff_syncres.v:
+![ALT](Images/async_set.png)
+
+### Synchronous Reset D Flip-Flop:
+- **Definition:** A reset that forces the flip-flop output to 0, but only on the active clock edge.
+- **Behavior:**
+    - When reset = 1, output Q becomes 0 at the next clock edge.
+    - When reset = 0, the flip-flop captures data input D on the clock edge.
+
+ ``` verilog
+**Verilog Module:** dff_syncres.v
+module dff_syncres (input clk, input async_reset, input sync_reset, input d, output reg q);
+  always @ (posedge clk)
+    if (sync_reset)
+      q <= 1'b0;
+    else
+      q <= d;
+endmodule
+```
+### Waveform for dff_syncres.v:
+![ALT](Images/sync_set.png)
+
+## Flop Synthesis Simulation Flow:
+### iVerilog Simulation for all different reset/set behavior Flip-flops:
+1. Compile the design and testbench
+```
+iverilog <design_file.v> <testbench_file.v>
+```
+2. Run the Simulation
+```
+./a.out
+```
+3. View waveform in **gtkwave**:
+```
+gtkwave <waveform_file.vcd>
+```
+
+
+
 
 
