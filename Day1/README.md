@@ -184,7 +184,8 @@ read_liberty -lib <path_to_sky130_fd_sc_hd__tt_025C_1v80.lib>
 - This library contains information about standard cells (AND, OR, NOT, etc.) and their characteristics (timing, area, and power).
 ### 3️⃣ Read the Verilog Design File
 Load the RTL design into Yosys using:
-``` read_verilog <design_file.v> 
+```
+read_verilog <design_file.v> 
 ```
 - This tells Yosys which design you want to synthesize.
 ![ALT](Images/yosys_lab1.png)
