@@ -100,7 +100,7 @@ Retiming is a **sequential optimization technique** where flip-flops (registers)
 3. Ensure **data dependencies** are preserved.
 
 ## Labs on Combination & Sequential Logic Optimizations:
-## Steps to synthesis the design:
+### Steps to synthesis the design:
 1.  Start Yosys
 ```
 yosys
@@ -130,7 +130,7 @@ abc -liberty <path_to_sky130_fd_sc_hd__tt_025C_1v80.lib>
 show
 ```
 ---
-## 1. Lab1- 2 input AND gate
+### 1. Lab1- 2 input AND gate
 ```verilog
 🔹 Module: opt_check
 module opt_check (input a , input b , output y);
@@ -145,7 +145,7 @@ endmodule
 
 ![ALT](Images/opt_check.png)
 
-## 2. Lab2 - 2 input OR gate
+### 2. Lab2 - 2 input OR gate
 ```verilog
 🔹 Module: opt_check2
 module opt_check2 (input a , input b , output y);
@@ -160,7 +160,7 @@ endmodule
 - Equivalent Logic: Can be thought of as `y = a | b`.
 ![ALT](Images/opt_check2.png)
 
-## 3. Lab3 - 3 input AND gate
+### 3. Lab3 - 3 input AND gate
 ```verilog
 🔹 Module: opt_check3
 module opt_check2 (input a , input b , output y);
@@ -174,7 +174,7 @@ endmodule
 
 ![ALT](Images/opt_check3.png)
 
-## 4. Lab4:
+### 4. Lab4:
 ```verilog
 🔹 Module: opt_check4
 module opt_check4 (input a , input b , input c , output y);
@@ -192,7 +192,7 @@ module opt_check4 (input a , input b , input c , output y);
 
 ![ALT](Images/opt_check4.png)
 
-## 5. Lab5 - D Flip Flop:
+### 5. Lab5 - D Flip Flop:
 ```verilog
 🔹 Module: dff_const1
 module dff_const1(input clk, input reset, output reg q);
@@ -212,7 +212,7 @@ endmodule
 
 ![ALT](Images/dff_const1.png)
 
-## 6. Lab6 - d Flip Flop
+### 6. Lab6 - d Flip Flop
 ```verilog
 🔹 Module: dff_const2
 module dff_const2(input clk, input reset, output reg q);
@@ -232,7 +232,7 @@ endmodule
 - On reset → output `q` is set to `1`.  
 - On every clock edge (when not in reset) → `q` remains `1`.
 
-## 7. Lab7
+### 7. Lab7
 ```verilog
 🔹 Module: dff_const3
 module dff_const3(input clk, input reset, output reg q);
@@ -260,6 +260,29 @@ endmodule
   - `q` takes the value of the previous `q1`.
 
 ![ALT](Images/dff_const3.png)
+
+### 8. Lab 8 - Counter Compared to a Constant  
+- **Design**: 3-bit counter with output `q` high only when count = 3'b100 (decimal 4).  
+- **Analysis**: All counter bits are required since `q` depends on the full value.  
+- **Optimization**: Only the comparator `(count == 3'b100)` is simplified with minimal gates.  
+- **Result**: Counter stays at 3 flip-flops, comparator logic is optimized.
+
+``` verilog
+🔹 Module: counter_opt
+module counter_opt (input clk , input reset , output q);
+reg [2:0] count;
+assign q = (count[2:0] == 3'b100);
+
+always @(posedge clk ,posedge reset)
+begin
+	if(reset)
+		count <= 3'b000;
+	else
+		count <= count + 1;
+end
+
+endmodule
+```
 
  ## 📝 Summary:
 
