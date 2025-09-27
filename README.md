@@ -37,11 +37,11 @@ This repository is intended for students, hobbyists, and engineers who want to l
 
 | Day | Topic |
 |-----|-------|
-| Day 1 | [Introduction to Verilog RTL Design and Synthesis](./Day_1) |
-| Day 2 | [Timing Libraries and Efficient Flop Coding Styles](./Day_2) |
-| Day 3 | [Combinational and Sequential Optimizations](./Day_3) |
-| Day 4 | [Gate Level Simulation & Synthesis-Simulation Mismatch](./Day_4) |
-| Day 5 | [Advanced Synthesis and Optimization](./Day_5) |
+| Day 1 | [Introduction to Verilog RTL Design and Synthesis](./Day1) |
+| Day 2 | [Timing Libraries and Efficient Flop Coding Styles](./Day2) |
+| Day 3 | [Combinational and Sequential Optimizations](./Day3) |
+| Day 4 | [Gate Level Simulation & Synthesis-Simulation Mismatch](./Day4) |
+| Day 5 | [Advanced Synthesis and Optimization](./Day5) |
 
 
 Each day folder contains:
