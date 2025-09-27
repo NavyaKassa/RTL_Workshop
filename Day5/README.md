@@ -100,10 +100,14 @@ always @(*) begin
 end
 endmodule
 ```
+- Before Synthesis (RTL Simulation):
 ![ALT](Images/incomplete_if1.png)
 
 ### Lab 2: Yosys Synthesis Result of Lab 1
 ![ALT](Images/incomplete_if_yosys.png)
+
+### After Synthesis (GLS Simulation):
+![ALT](Images/incomp_if_gls.png)
 
 ### Lab3: Nested If-Else
 ```verilog
@@ -116,10 +120,14 @@ always @(*) begin
 end
 endmodule
 ```
+- Before Synthesis (RTL Simulation):
 ![ALT](Images/incomp_if2.png)
 
 ### Lab4: Yosys Synthesis Result of Lab 3
 ![ALT](Images/incomp_if2_yosys.png)
+
+- After Synthesis (RTL Simulation):
+![ALT](Images/incomp_if_else.png)
 
 ### Lab 5: Complete Case Statement
 ```verilog
@@ -133,11 +141,15 @@ always @(*) begin
 end
 endmodule
 ```
+- Before Synthesis (RTL Simulation):
 ![ALT](Images/comp_case1.png)
 
 
 ### Lab 6: Synthesis Result of Lab 5
 ![ALT](Images/comp_case_yosys.png)
+
+- After Synthesis (RTL Simulation):
+![ALT](Images/comp_case_gls.png)
 
 ### Lab 7: Incomplete Case Handling
 ```verilog
@@ -156,10 +168,14 @@ always @(*) begin
 end
 endmodule
 ```
+- Before Synthesis (RTL Simulation):
 ![ALT](Images/case1.png)
 
 ### Lab 8: Yosys Synthesis:
 ![ALT](Images/case_yosys.png)
+
+- After Synthesis (RTL Simulation):
+![ALT](Images/bad_case.png)
 
 ### Lab 9: Partial Assignments in Case
 ```verilog
@@ -183,7 +199,14 @@ always @(*) begin
 end
 endmodule
 ```
+- Before Synthesis (RTL Simulation):
 ![ALT](Images/partial_case.png)
+
+- Yosys Synthesis:
+![ALT](Images/partial_case_yosys.png)
+
+- After Synthesis (GLS Simulation):
+![ALT](Images/partial_case_gls.png)
 
 ## 4. For Loops in Verilog
 - A for loop is used inside procedural blocks (initial, always, task, function) to execute statements repeatedly based on a loop counter.
@@ -217,6 +240,11 @@ module mux2to1_for (
   end
 endmodule
 ```
+- Before Synthesis (RTL Simulation):
+![ALT](Images/for_loop1_sim.png)
+
+- After Synthesis (GLS Simulation):
+![ALT](Images/for_loop1_gls.png)
 
 ## 5. Generate Blocks in Verilog
 **Definition:**
@@ -262,6 +290,16 @@ endgenerate
 - Since the carry signal “ripples” through all the stages, it is called a Ripple Carry Adder.
 
 ![ALT](Images/ripple_carry_adder.png)
+
+- Before Synthesis (RTL Simulation):
+![ALT](Images/rca_sim1.png)
+
+- Yosys Synthesis:
+![ALT](Images/rca_netlist.png)
+
+- After Synthesis (RTL Simulation):
+![ALT](Images/rca_sim2_gls.png)
+
 
 ## 7. Labs on Loops and Generate Blocks
 **Lab 10:  4x1 MUX Using For Loop**
