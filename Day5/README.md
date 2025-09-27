@@ -5,7 +5,7 @@
 
 ---
 
-## Table of COntents:
+## Table of Contents:
 - [1. If-Else Statements in Verilog](#1-if-else-statements-in-verilog)
 - [2. Inferred Latches in Verilog](#2-inferred-latches-in-verilog)
 - [3. Labs for If-Else and Case Statements](#3-labs-for-if-else-and-case-statements)
@@ -33,7 +33,7 @@ else begin
    // statements executed if condition is false
 end
 ```
-** Nested If-Else Syntax:**
+**Nested If-Else Syntax:**
 ```verilog
 if (condition1) begin
    // executes if condition1 is true
