@@ -3,6 +3,19 @@
 - Topics include the impact of **if-else statements**, **for loops**, and **generate blocks**, along with common pitfalls like **inferred latches**.  
 - Hands-on labs are provided to reinforce concepts through practical coding examples.
 
+---
+
+## Table of COntents:
+- [1. If-Else Statements in Verilog](#1-if-else-statements-in-verilog)
+- [2. Inferred Latches in Verilog](#2-inferred-latches-in-verilog)
+- [3. Labs for If-Else and Case Statements](#3-labs-for-if-else-and-case-statements)
+- [4. For Loops in Verilog](#4-for-loops-in-verilog)
+- [5. Generate Blocks in Verilog](#5-generate-blocks-in-verilog)
+- [6. Ripple Carry Adder(RCA)?](#6-ripple-carry-adder-rca)
+- [7. Labs on Loops and Generate Blocks](#7-labs-on-loops-and-generate-blocks)
+- [Summary](#summary)
+
+
 ## 1. If-Else Statements in Verilog
 **Definition:**
 if-else statements are conditional constructs used in Verilog to make decisions based on input values. They allow different blocks of code to execute depending on whether a condition is true or false.
