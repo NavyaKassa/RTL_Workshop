@@ -127,7 +127,7 @@ endmodule
 ![ALT](Images/incomp_if2_yosys.png)
 
 - After Synthesis (GLS Simulation):
-![ALT](Images/incomp_if_else.png)
+![ALT](Images/incomp_if_else_gls.png)
 
 ### Lab 5: Complete Case Statement
 ```verilog
