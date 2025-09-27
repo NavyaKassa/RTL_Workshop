@@ -1,4 +1,20 @@
-# Combinational and Sequential Optimization
+# Day-3: Combinational and Sequential Optimization
+On Day 3 of the workshop, we focus on improving the efficiency and performance of digital circuits by applying optimization techniques to both combinational and sequential logic designs. This session covers practical examples and hands-on exercises to reinforce these concepts.
+
+---
+
+## Table of Contents
+
+- [Introduction to Logic Optimizations](#introduction-to-logic-optimizations)
+- [Constant Propagation](#-constant-propagation)
+- [Boolean Logic Optimization](#-boolean-logic-optimization)
+- [Sequential Logic Optimization](#-sequential-logic-optimization)
+- [State Optimization](#-state-optimization)
+- [Cloning](#-cloning)
+- [Retiming](#-retiming)
+- [Labs on Combination & Sequential Logic Optimizations:](#labs-on-combination--sequential-logic-optimizations)
+- [Summary](#-summary)
+---
 
 ## Introduction to Logic Optimizations:
 ## 🔹 Combinational Logic Optimization
