@@ -10,6 +10,15 @@ We’ll cover both the theoretical background and practical impact, followed by 
 
 ---
 
+## Table of Contents
+
+- [1. Gate-Level Simulation (GLS)](#1-gate-level-simulation-gls)
+- [2. Synthesis-Simulation Mismatch](#2-synthesis-simulation-mismatch)
+- [3. Blocking vs. Non-Blocking Assignments in Verilog](#3-blocking-vs-non-blocking-assignments-in-verilog)
+- [4. Labs](#4-labs)
+- [5. Summary](#5-summary)
+---
+
 ## 1. Gate-Level Simulation (GLS):
 **Definition:**  
 - GLS simulates the synthesized gate-level netlist (post-synthesis Verilog) including gates, flip-flops, and optionally timing delays.
