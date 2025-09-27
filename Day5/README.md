@@ -100,13 +100,13 @@ always @(*) begin
 end
 endmodule
 ```
-- Before Synthesis (RTL Simulation):
+- ### Before Synthesis (RTL Simulation):
 ![ALT](Images/incomplete_if1.png)
 
 ### Lab 2: Yosys Synthesis Result of Lab 1
 ![ALT](Images/incomplete_if_yosys.png)
 
-### After Synthesis (GLS Simulation):
+- ### After Synthesis (GLS Simulation):
 ![ALT](Images/incomp_if_gls.png)
 
 ### Lab3: Nested If-Else
