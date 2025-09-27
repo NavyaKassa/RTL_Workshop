@@ -41,7 +41,7 @@ This repository is intended for students, hobbyists, and engineers who want to l
 | Day 2 | [Timing Libraries and Efficient Flop Coding Styles](./Day2) |
 | Day 3 | [Combinational and Sequential Optimizations](./Day3) |
 | Day 4 | [Gate Level Simulation & Synthesis-Simulation Mismatch](./Day4) |
-| Day 5 | [Optimization in SYnthesis](./Day5) |
+| Day 5 | [Optimization in Synthesis](./Day5) |
 
 
 Each day folder contains:
