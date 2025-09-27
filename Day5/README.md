@@ -120,13 +120,13 @@ always @(*) begin
 end
 endmodule
 ```
-- Before Synthesis (RTL Simulation):
+- ### Before Synthesis (RTL Simulation):
 ![ALT](Images/incomp_if2.png)
 
 ### Lab4: Yosys Synthesis Result of Lab 3
 ![ALT](Images/incomp_if2_yosys.png)
 
-- After Synthesis (GLS Simulation):
+- ### After Synthesis (GLS Simulation):
 ![ALT](Images/incomp_if_else_gls.png)
 
 ### Lab 5: Complete Case Statement
@@ -141,14 +141,14 @@ always @(*) begin
 end
 endmodule
 ```
-- Before Synthesis (RTL Simulation):
+- ### Before Synthesis (RTL Simulation):
 ![ALT](Images/comp_case1.png)
 
 
 ### Lab 6: Synthesis Result of Lab 5
 ![ALT](Images/comp_case_yosys.png)
 
-- After Synthesis (GLS Simulation):
+- ### After Synthesis (GLS Simulation):
 ![ALT](Images/comp_case_gls.png)
 
 ### Lab 7: Incomplete Case Handling
@@ -168,13 +168,13 @@ always @(*) begin
 end
 endmodule
 ```
-- Before Synthesis (RTL Simulation):
+- ### Before Synthesis (RTL Simulation):
 ![ALT](Images/case1.png)
 
 ### Lab 8: Yosys Synthesis:
 ![ALT](Images/case_yosys.png)
 
-- After Synthesis (GLS Simulation):
+- ### After Synthesis (GLS Simulation):
 ![ALT](Images/bad_case_gls.png)
 
 ### Lab 9: Partial Assignments in Case
@@ -199,13 +199,13 @@ always @(*) begin
 end
 endmodule
 ```
-- Before Synthesis (RTL Simulation):
+- ### Before Synthesis (RTL Simulation):
 ![ALT](Images/partial_case.png)
 
-- Yosys Synthesis:
+- ### Yosys Synthesis:
 ![ALT](Images/partial_case_yosys.png)
 
-- After Synthesis (GLS Simulation):
+- ### After Synthesis (GLS Simulation):
 ![ALT](Images/partial_case_gls.png)
 
 ## 4. For Loops in Verilog
@@ -240,10 +240,10 @@ module mux2to1_for (
   end
 endmodule
 ```
-- Before Synthesis (RTL Simulation):
+- ### Before Synthesis (RTL Simulation):
 ![ALT](Images/for_loop1_sim.png)
 
-- After Synthesis (GLS Simulation):
+- ### After Synthesis (GLS Simulation):
 ![ALT](Images/for_loop1_gls.png)
 
 ## 5. Generate Blocks in Verilog
@@ -291,13 +291,13 @@ endgenerate
 
 ![ALT](Images/ripple_carry_adder.png)
 
-- Before Synthesis (RTL Simulation):
+- ### Before Synthesis (RTL Simulation):
 ![ALT](Images/rca_sim1.png)
 
-- Yosys Synthesis:
+- ### Yosys Synthesis:
 ![ALT](Images/rca_netlist.png)
 
-- After Synthesis (RTL Simulation):
+- ### After Synthesis (GLS Simulation):
 ![ALT](Images/rca_sim2_gls.png)
 
 
@@ -321,7 +321,15 @@ always @(*) begin
 end
 endmodule
 ```
+- ### Before Synthesis (RTL Simulation):
 ![ALT](Images/4x1_mux.png)
+
+- ### Yosys Synthesis
+![ALT](Images/4x1_mux_netlist.png)
+
+- ### After Synthesis (GLS Simulation):
+![ALT](Images/4x1_mux_gls.png)
+
 
 **Lab 11: 8x1 Demux Using Case**
 ```verilog
@@ -348,7 +356,14 @@ always @(*) begin
 end
 endmodule
 ```
+- ### Before Synthesis (RTL Simulation):
 ![ALT](Images/8x1_demux.png)
+
+- ### Yosys Synthesis:
+![ALT](Images/demux_case_netlist.png)
+
+- ### After Synthesis (GLS Simulation):
+![ALT](Images/demux_case_gls.png)
 
 ### Lab 12: 8-to-1 Demux Using For Loop
 
@@ -371,7 +386,14 @@ always @(*) begin
 end
 endmodule
 ```
+- ### Before Synthesis (RTL Simulation):
 ![ALT](Images/8x1_demux_if.png)
+
+- ### Yosys Synthesis:
+![ALT](Images/demux_for_netlist.png)
+
+- ### After Synthesis (RTL Simulation):
+![ALT](Images/demux_for_gls.png)
 
 ### Lab 13: 8-bit Ripple Carry Adder with Generate Block
 ```verilog
