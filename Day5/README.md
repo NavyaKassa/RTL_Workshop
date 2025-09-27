@@ -175,7 +175,7 @@ endmodule
 ![ALT](Images/case_yosys.png)
 
 - After Synthesis (GLS Simulation):
-![ALT](Images/bad_case.png)
+![ALT](Images/bad_case_gls.png)
 
 ### Lab 9: Partial Assignments in Case
 ```verilog
