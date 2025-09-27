@@ -1,5 +1,13 @@
-# Timing libs, hierarchical vs flat synthesis and Efficient flop coding styles
+# Day-2: Timing libs, hierarchical vs flat synthesis and Efficient flop coding styles
+Welcome to Day 2 of the RISC-V Reference SoC Tapeout Program! Today, we focus on three key areas:
+- Understanding the .lib timing library (e.g., sky130_fd_sc_hd__tt_025C_1v80.lib) and its role in timing analysis and synthesis.
+- Exploring the differences between hierarchical and flat synthesis approaches.
+- Learning efficient flip-flop coding techniques to improve synthesis results, timing, and area optimization.
+- This session includes practical examples and labs to reinforce these concepts.
 
+##  Table of Contents
+1. [Introduction to Timing Libraries](#introduction-to-timing-libraries)
+2.  
 ### Introduction to Timing Libraries
 The Liberty format (.lib) is an industry-standard text format used to describe technology library cells such as standard cells, I/O buffers, or complex IPs.
 
