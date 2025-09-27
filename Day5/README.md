@@ -126,7 +126,7 @@ endmodule
 ### Lab4: Yosys Synthesis Result of Lab 3
 ![ALT](Images/incomp_if2_yosys.png)
 
-- After Synthesis (RTL Simulation):
+- After Synthesis (GLS Simulation):
 ![ALT](Images/incomp_if_else.png)
 
 ### Lab 5: Complete Case Statement
@@ -148,7 +148,7 @@ endmodule
 ### Lab 6: Synthesis Result of Lab 5
 ![ALT](Images/comp_case_yosys.png)
 
-- After Synthesis (RTL Simulation):
+- After Synthesis (GLS Simulation):
 ![ALT](Images/comp_case_gls.png)
 
 ### Lab 7: Incomplete Case Handling
@@ -174,7 +174,7 @@ endmodule
 ### Lab 8: Yosys Synthesis:
 ![ALT](Images/case_yosys.png)
 
-- After Synthesis (RTL Simulation):
+- After Synthesis (GLS Simulation):
 ![ALT](Images/bad_case.png)
 
 ### Lab 9: Partial Assignments in Case
