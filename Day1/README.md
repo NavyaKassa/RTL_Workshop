@@ -3,7 +3,7 @@ Welcome to Day 1 of the RTL Workshop!
 Today, we’ll start exploring digital design with Verilog, simulate your designs using Icarus Verilog (iverilog), and get introduced to logic synthesis with Yosys. The session includes hands-on labs, step-by-step examples, and clear explanations to help us to establish a solid understanding of RTL concepts.
 
 ## Table of Contents
-1. [Simulator, Design, and Testbench](./Day_1/1_what-is-a-simulator-design-and-testbench.md)
+1. [What is Simulator, Design, & Testbench](#1-What-is-Simulator-Design-&-Test-Bench)
 2. [Introduction to iVerilog](./Day_1/2_iverilog.md)
 3. [Lab: Simulating a 2x1 Multiplexer](./Day_1/3_lab_mux.md)
 4. [Introduction to Yosys and Logic Synthesis](./Day_1/4_yosys_intro.md)
@@ -11,7 +11,7 @@ Today, we’ll start exploring digital design with Verilog, simulate your design
 6. [Summary](./Day_1/6_summary.md)
 
 
-## 1. What is Simulator, Design & Test Becnch?
+## 1. What is Simulator, Design & Test Bench?
 
 ### Simulator:
 A simulator is a software tool that models the behavior of a digital circuit described in HDL (Hardware Description Language) like Verilog or VHDL, and allows designers to verify if the logic works as intended.
