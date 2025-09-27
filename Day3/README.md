@@ -299,6 +299,7 @@ end
 
 endmodule
 ```
+![ALT](Images/counter_opt_netlist.png)
 
  ## 📝 Summary:
 
