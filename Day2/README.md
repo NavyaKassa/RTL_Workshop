@@ -11,7 +11,7 @@ Welcome to Day 2 of the RISC-V Reference SoC Tapeout Program! Today, we focus on
    		[Why PVT Matters?](#why-pvt-matters)
 2. [Hierarchical vs Flat Synthesis](#hierarchical-vs-flat-synthesis)
 3. [Flip-Flop coding style](#flip-flop-coding-styles)
-4. [Asynchronous Set D Flip-Flop](#asynchronous-set-d-fip-flop)
+4. [Asynchronous Set D Flip-Flop](#asynchronous-set-d-fip--flop)
 5. [Synchronous Reset D Flip-Flop](#synchronous-reset-d-flip-flop)
 6. [Flop Simulation and Synthesis Flow](#flop-simulation-and-synthesis-flow)
 7. [Interesting Optimizations: Multiply by 2 and 9](#interesting-optimizations--multiply-by-2-and-9)
