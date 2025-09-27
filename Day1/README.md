@@ -4,11 +4,11 @@ Today, we’ll start exploring digital design with Verilog, simulate your design
 
 ## Table of Contents
 1. [What is Simulator, Design & Testbench](#1-what-is-simulator-design--test-bench)
-2. [Introduction to iVerilog](./Day_1/2_iverilog.md)
-3. [Lab: Simulating a 2x1 Multiplexer](./Day_1/3_lab_mux.md)
-4. [Introduction to Yosys and Logic Synthesis](./Day_1/4_yosys_intro.md)
-5. [Lab: Synthesis using Yosys](./Day_1/5_lab_yosys.md)
-6. [Summary](./Day_1/6_summary.md)
+2. [Introduction to iVerilog](#2-introduction-to-iverilog)
+3. [Lab: Simulating a 2x1 Multiplexer](#3-lab--simulating-a-2x1-multiplexer)
+4. [Introduction to Yosys and Logic Synthesis](#4-introduction-to-yosys-and-logic-synthesis)
+5. [Lab: Synthesis using Yosys](#5-lab-using-yosys)
+6. [Summary](#6-summary)
 
 
 ## 1. What is Simulator, Design & Test Bench?
@@ -237,6 +237,12 @@ write_verilog -noattr <simple_netlist.v> # Saves a simpler version without extra
 
 Following these steps, we will convert your RTL design into a gate-level netlist, mapped to Sky130 standard cells, visualize the netlist, and save it for future use.
 
+## 6. Summary:
+- Simulator, Design & Testbench: Simulator models HDL designs, design is the Verilog code, and testbench verifies the design.
+- iVerilog: Open-source Verilog simulator that generates .vcd files for waveform viewing in GTKWave.
+- Lab: 2x1 Multiplexer Simulation: Simulate a 2x1 MUX design and observe registered output behavior in GTKWave.
+- Yosys and Logic Synthesis: Converts RTL into gate-level netlist using standard cell libraries for synthesis optimization.
+- Lab: Synthesis using Yosys: Hands-on synthesis of MUX design into gate-level netlist mapped to Sky130 cells.
 
 
 
