@@ -16,7 +16,8 @@ We’ll cover both the theoretical background and practical impact, followed by 
 - [2. Synthesis-Simulation Mismatch](#2-synthesis-simulation-mismatch)
 - [3. Blocking vs. Non-Blocking Assignments in Verilog](#3blocking-vs-non-blocking-assignments-in-verilog))
 - [4. Labs](#4-labs)
-- [5. Summary](#5-summary)
+- [5. Summary](#-summary)
+
 ---
 
 ## 1. Gate-Level Simulation (GLS):
