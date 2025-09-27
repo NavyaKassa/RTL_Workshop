@@ -32,15 +32,17 @@ This repository is intended for students, hobbyists, and engineers who want to l
 
 ## 📅 Workshop / Week-1 Structure
 
+
 ### Week-1 / Day-wise Topics
 
-| Day | Topics Covered |
-|-----|----------------|
-| Day 1 | Introduction to Verilog RTL Design & Synthesis |
-| Day 2 | Timing Libraries, Hierarchical vs. Flat Synthesis, Efficient Flip-Flop Coding Styles |
-| Day 3 | Combinational & Sequential Logic Optimization |
-| Day 4 | Gate-Level Simulation (GLS), Blocking vs Non-Blocking Assignments, Synthesis-Simulation Mismatch |
-| Day 5 | Advanced Synthesis & Optimization (if-else, for loops, generate blocks, inferred latches, Ripple Carry Adder) |
+| Day | Topic |
+|-----|-------|
+| Day 1 | [Introduction to Verilog RTL Design and Synthesis](./Day_1) |
+| Day 2 | [Timing Libraries and Efficient Flop Coding Styles](./Day_2) |
+| Day 3 | [Combinational and Sequential Optimizations](./Day_3) |
+| Day 4 | [Gate Level Simulation & Synthesis-Simulation Mismatch](./Day_4) |
+| Day 5 | [Advanced Synthesis and Optimization](./Day_5) |
+
 
 Each day folder contains:
 - `README.md` – Summary of concepts learned along with lab exercises.
