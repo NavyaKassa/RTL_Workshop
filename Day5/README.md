@@ -48,7 +48,7 @@ else begin
    // executes if none of the conditions are true
 end
 ```
-## 2.Inferred Latches in Verilog
+## 2. Inferred Latches in Verilog
 - An inferred latch is unintentionally created during synthesis when a combinational always block does not assign values to an output under all possible conditions.
 - The synthesis tool inserts a latch to "remember" the previous value whenever the signal is not explicitly updated.
 - This is usually undesired, because latches can cause timing issues and unpredictability in hardware.
@@ -200,7 +200,7 @@ end
 endmodule
 ```
 - ### Before Synthesis (RTL Simulation):
-![ALT](Images/partial_case.png)
+![ALT](Images/partial_case_rtl.png)
 
 - ### Yosys Synthesis:
 ![ALT](Images/partial_case_yosys.png)
