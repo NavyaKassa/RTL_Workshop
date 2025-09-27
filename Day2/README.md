@@ -134,7 +134,7 @@ endmodule
 ### Yosys Synthesis:
 ![ALT](Images/flat_async_reset.png)
 
-### 📌 Asynchronous Set D Flip-Flop:
+### Asynchronous Set D Flip-Flop:
 - **Definition:** Forces the flip-flop output Q to 1 immediately, regardless of the clock.
 - **Behavior:** As soon as set is active, output becomes 1 — independent of the clock.
 
