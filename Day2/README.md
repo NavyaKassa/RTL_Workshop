@@ -7,7 +7,16 @@ Welcome to Day 2 of the RISC-V Reference SoC Tapeout Program! Today, we focus on
 
 ##  Table of Contents
 1. [Introduction to Timing Libraries](#introduction-to-timing-libraries)
-2.  
+   		[What is PVT](#what-is-pvt)
+   		[Why PVT Matters?](#why-pvt-matters)
+2. [Hierarchical vs Flat Synthesis](#hierarchical-vs-flat-synthesis)
+3. [Flip-Flop coding style](#flip-flop-coding-styles)
+4. [Asynchronous Set D Flip-Flop](#asynchronous-set-d-fip-flop)
+5. [Synchronous Reset D Flip-Flop](#synchronous-reset-d-flip-flop)
+6. [Flop Simulation and Synthesis Flow](#flop-simulation-and-synthesis-flow)
+7. [Interesting Optimizations: Multiply by 2 and 9](#interesting-optimizations--multiply-by-2-and-9)
+8. [Summary](#summary)
+   	
 ### Introduction to Timing Libraries
 The Liberty format (.lib) is an industry-standard text format used to describe technology library cells such as standard cells, I/O buffers, or complex IPs.
 
