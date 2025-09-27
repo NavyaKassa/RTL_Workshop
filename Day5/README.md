@@ -367,7 +367,7 @@ endmodule
 ![ALT](Images/ripple_carry.png)
 
 
-## Summary:
+## 7. Summary:
 - **If-Else Statements** – Used for conditional decision-making; must cover all cases to avoid unintended latches.
 - **Inferred Latches** – Occur when outputs in combinational blocks aren’t assigned for all input conditions; fixed with else/default assignments.
 - **Case Statements** – Provide multi-way branching; incomplete cases can also infer latches, so include a default.
